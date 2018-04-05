@@ -6,7 +6,7 @@ const UserIcon = () => {
         <View>
            <Image
            style={styles.imgStyle}
-           source={require('../img/icons/user.png')}
+           source={require('../assets/img/icons/user.png')}
                />
        </View>
 );

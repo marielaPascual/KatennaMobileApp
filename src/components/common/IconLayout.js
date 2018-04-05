@@ -24,7 +24,7 @@ const styles = {
         flexDirection: 'row',
         justifyContent:"space-evenly",
         marginTop: 15
-    }
+        }
 };
 
 export default IconLayout;

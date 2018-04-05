@@ -6,7 +6,7 @@ const EditIcon = () => {
         <View>
            <Image
            style={styles.imgStyle}
-           source={require('../img/icons/edit.png')}
+           source={require('../assets/img/icons/edit.png')}
                />
        </View>
 );

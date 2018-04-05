@@ -7,11 +7,11 @@ const Header = () => {
         <View style={viewStyle}>
             <Image
           style={logoStyle}
-          source={require('../../img/katenna-logo.png')}
+          source={require('../../assets/img/katenna-logo.png')}
         />
         <Image
           style={logOutStyle}
-          source={require('../../img/icons/exit.png')}
+          source={require('../../assets/img/icons/exit.png')}
         />
       </View>
     );

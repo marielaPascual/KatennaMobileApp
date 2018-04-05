@@ -7,7 +7,7 @@ const AddIcon = () => {
             <View>
             <Image
             style={styles.imgStyle}
-            source={require('../img/icons/add.png')}
+            source={require('../assets/img/icons/add.png')}
                 />
                 </View>
     );

@@ -6,7 +6,7 @@ const ListIcon = () => {
         <View>
            <Image
            style={styles.imgStyle}
-           source={require('../img/icons/list.png')}
+           source={require('../assets/img/icons/list.png')}
                />
        </View>
 );
