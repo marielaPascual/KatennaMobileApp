@@ -1,7 +1,7 @@
 import React , { Component} from 'react'; 
 import { View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-
+import Button from './common/Button'
 
 class LoginForm extends Component {
     
@@ -13,11 +13,8 @@ class LoginForm extends Component {
                 style={styles.imgStyle}
                 source={require('../assets/img/katenna-logo.png')}
                 />
-            <Text 
-            style={styles.btnStyle}
-            onPress={()=> Actions.welcome()}>
-            Log In 
-            </Text>  
+            
+            <Button onPress={()=> Actions.welcome()}></Button>
         </View>
         );
     }
@@ -34,17 +31,6 @@ const styles = {
     imgStyle: {
         height: 45,
         width: 200
-    },
-
-    btnStyle: {
-        color: "#f6c501", 
-        paddingTop: 8, 
-        paddingBottom: 8,
-        paddingLeft: 18,
-        paddingRight: 18,
-        marginTop: 30,
-        backgroundColor: "#fff"
-
     }
 
 };
