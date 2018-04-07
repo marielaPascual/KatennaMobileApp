@@ -1,27 +1,22 @@
 import React from 'react';
 import { ScrollView, View, Text } from 'react-native';
-import Header from './src/components/common/Header';
-import Menu from './src/components/common/Menu';
-import { setCustomText } from 'react-native-global-props';
+import { setCustomText } from 'react-native-global-props'; //for global styling
+import Routers from './src/components/Router';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <Header />
-        <ScrollView>
-          <Text>Checking font</Text>
-        </ScrollView>
-        <Menu />
+        <Routers/>
       </View>
     );
   }
 }
 
-
+//global styling props go here
 const customTextProps = {
   style: {
-    fontSize: 16,
+    fontSize: 20,
     color: 'black'
   }
 };
