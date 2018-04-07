@@ -2,11 +2,11 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-const Button = () => {
+const Button = ({ onPress}) => {
     const { buttonStyle, textStyle } = styles;
 
     return (
-        <TouchableOpacity onPress={()=> Actions.welcome()} style={buttonStyle}>
+        <TouchableOpacity onPress={onPress} style={buttonStyle}>
             <Text style={textStyle}>
             Log In
             </Text>
@@ -33,4 +33,4 @@ const styles = {
     }
 };
 
-export default Button;
+export { Button };
