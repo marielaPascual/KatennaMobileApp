@@ -60,9 +60,10 @@ class LoginForm extends Component {
                 style={styles.imgStyle}
                 source={require('../assets/img/katenna-logo.png')}
                 />
-
-            <CardSection>
+			<View style={styles.bothInputsStyle}>
+            	<CardSection>
 					<Input
+						
 						placeholder="user@email.com"
 						label="Email"
 						value={this.state.email}
@@ -79,7 +80,7 @@ class LoginForm extends Component {
 						onChangeText={password => this.setState({ password })}
 					/>
 				</CardSection>
-
+			</View>
 			<Text style={styles.errorTextStyle}>
 					{this.state.error}
 				</Text>
@@ -93,16 +94,21 @@ class LoginForm extends Component {
 
 const styles = {
     viewStyle:{
-        flex: 1,
-         justifyContent: 'center',
-         alignItems: 'center', 
-         backgroundColor: "#f6c501"
+		flex: 1,
+		justifyContent: 'center',
+        alignItems: 'center', 
+        backgroundColor: "#f6c501"
  
     },
     imgStyle: {
         height: 45,
-        width: 200
-    }
+		width: 200,
+		marginBottom: 90
+	},
+	bothInputsStyle: {
+		width: 250,
+		marginBottom: 30
+	}
 
 };
 

@@ -1,21 +1,23 @@
 import React from 'react'; 
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import Button from './common';
 
 const WelcomeScreen = () => {
     return (
         <View style={styles.viewStyle}>
             <Text>Hi, {'Fulanita'}!</Text>
-                <Image 
-                
+            <Image 
                 style={styles.imgStyle}
                 source={require('../assets/img/kat1.png')}
                 />
-            <Text 
-            style={styles.btnStyle}
-            onPress={()=> Actions.bot()}>
-            Wanna Chat?
-            </Text>    
+            <TouchableOpacity onPress={()=> Actions.bot()}>  
+                <Text 
+                    style={styles.btnStyle}>
+                Wanna Chat?
+                </Text> 
+            </TouchableOpacity>  
+
         </View>
     );
 };
@@ -24,7 +26,8 @@ const styles = {
    viewStyle:{
        flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#fff'
 
    },
     imgStyle: {
@@ -34,10 +37,12 @@ const styles = {
 
     },
     btnStyle: {
-        color: "#fff", 
+        color: "#f6c501", 
         padding: 12,
-        backgroundColor: "#f6c501"
-
+        backgroundColor: '#fff',
+        borderRadius: 3,
+        borderWidth: 3,
+        borderColor: '#f6c501'
     }
     
 };

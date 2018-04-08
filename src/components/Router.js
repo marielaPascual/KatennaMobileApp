@@ -48,7 +48,8 @@ const styles = {
     navBarTitle: {
         color: '#fff',
         fontSize: 20
-        }
+    },
+    
     
 };
 
