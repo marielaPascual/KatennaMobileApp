@@ -29,7 +29,7 @@ const styles = {
       borderRadius: 3,
       borderWidth: 3,
       borderColor: '#fff',
-      marginTop: 10
+      marginTop: 30
     }
 };
 
