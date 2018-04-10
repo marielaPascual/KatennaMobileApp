@@ -1,5 +1,5 @@
 import React , { Component} from 'react'; 
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Font } from 'react-native';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import { Button, Input, CardSection } from './common';
@@ -107,7 +107,7 @@ const styles = {
 	},
 	bothInputsStyle: {
 		width: 250,
-		marginBottom: 30
+		marginBottom: 10
 	}
 
 };

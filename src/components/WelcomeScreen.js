@@ -9,7 +9,7 @@ const WelcomeScreen = () => {
             <Text>Hi, {'Fulanita'}!</Text>
             <Image 
                 style={styles.imgStyle}
-                source={require('../assets/img/kat1.png')}
+                source={require('../assets/img/kat.png')}
                 />
             <TouchableOpacity onPress={()=> Actions.bot()}>  
                 <Text 

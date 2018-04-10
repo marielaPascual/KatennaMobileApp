@@ -1,15 +1,25 @@
 import React from 'react';
+import { View, Image } from 'react-native';
+
 import { Router, Scene } from 'react-native-router-flux';
 import WelcomeScreen from './WelcomeScreen';
 import ChatBotScreen from './ChatBotScreen';
 import LoginForm from './LoginForm';
+
+const AppLogo = () => {
+    return (
+      <View style={{ alignItems: 'center', marginTop: 3 }}>
+        <Image source={require('../assets/img/k-logo.png')}
+               style={{ width: 30, height: 30 }} />
+      </View>
+    );
+  };
 
 const Routers = () => (
     <Router navigationBarStyle={styles.navBar}
             titleStyle={styles.navBarTitle}
             navBarButtonColor='#fff' >
             
-                
 
             <Scene key="tabbar" tabs={false}> 
 
@@ -24,14 +34,14 @@ const Routers = () => (
                 <Scene  
                 key="welcome" 
                 component={WelcomeScreen}
-                title="Welcome"
-                
+                renderTitle={() => { return <AppLogo />; }}                
                 />
     
                 <Scene 
                 key="bot" 
                 component={ChatBotScreen}
                 title="Bot"
+                renderTitle={() => { return <AppLogo />; }}                                
                 />
                
             </Scene>
@@ -48,9 +58,7 @@ const styles = {
     navBarTitle: {
         color: '#fff',
         fontSize: 20
-    },
-    
-    
+    }  
 };
 
 
