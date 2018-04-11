@@ -5,7 +5,6 @@ class ChatBotScreen extends Component {
   render() {
     return (
         <WebView 
-          style={{overflow: hidden}}
           source={{uri: 'https://console.dialogflow.com/api-client/demo/embedded/7d304919-0df1-4533-8f13-e7a0e708cddc'}}
         />
       

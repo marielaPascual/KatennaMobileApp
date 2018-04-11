@@ -9,7 +9,7 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => 
 		<Text style={labelStyle}>{label}</Text>
 		<TextInput
 			secureTextEntry={secureTextEntry}
-			placeholder={placeholder}
+			placeholder={null}
 			autoCorrect={false}
 			style={inputStyle}
 			value={value}
@@ -29,7 +29,7 @@ const styles = {
 		flex: 2
 	},
 	labelStyle: {
-		fontSize: 16,
+		fontSize: 15,
 		paddingLeft: 15,
 		flex: 1
 	},

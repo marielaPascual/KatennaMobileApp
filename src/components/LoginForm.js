@@ -3,6 +3,7 @@ import { View, Text, Image, Font } from 'react-native';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import { Button, Input, CardSection } from './common';
+import TextComponent from './FontsComponent';
 
 class LoginForm extends Component {
 	state = {email: '' , password: '', error: '', loading: false };
@@ -16,6 +17,8 @@ class LoginForm extends Component {
 			storageBucket: 'authentication-5cc0a.appspot.com',
 			messagingSenderId: '916095330998'
 		  });
+		  
+		  this.image=require('../assets/img/katenna-logo.png')
 	}
 	onButtonPress() {
 		const { email, password } = this.state;
@@ -56,9 +59,9 @@ class LoginForm extends Component {
     render() {
         return (
             <View style={styles.viewStyle}>
-            <Image 
+            <Image
                 style={styles.imgStyle}
-                source={require('../assets/img/katenna-logo.png')}
+                source={this.image}
                 />
 			<View style={styles.bothInputsStyle}>
             	<CardSection>
