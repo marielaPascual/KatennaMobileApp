@@ -9,7 +9,7 @@ import LoginForm from './LoginForm';
 const AppLogo = () => {
     return (
       <View style={{ alignItems: 'center', marginTop: 3 }}>
-        <Image source={require('../assets/img/k-logo.png')}
+        <Image source={require('../assets/img/kIcon.png')}
                style={{ width: 30, height: 30 }} />
       </View>
     );
