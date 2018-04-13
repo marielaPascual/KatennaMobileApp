@@ -8,7 +8,7 @@ const Button = ({ onPress}) => {
     return (
         <TouchableOpacity onPress={onPress} style={buttonStyle}>
             <Text style={textStyle}>
-            Log In
+            LOG IN
             </Text>
         </TouchableOpacity>
     );
@@ -19,17 +19,17 @@ const styles = {
       alignSelf: 'center',
       color: '#fff',
       fontSize: 20,
+      letterSpacing: 2,
       paddingTop: 10,
       paddingBottom: 10,
-      paddingLeft: 10,
-      paddingRight: 10
+      paddingLeft: 50,
+      paddingRight: 50
     },
     buttonStyle: {
       backgroundColor: '#f6c501',
-      borderRadius: 3,
-      borderWidth: 3,
+      borderWidth: 2,
       borderColor: '#fff',
-      marginTop: 30
+      marginTop: 20
     }
 };
 

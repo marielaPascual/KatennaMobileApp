@@ -14,7 +14,7 @@ const WelcomeScreen = () => {
             <TouchableOpacity onPress={()=> Actions.bot()}>  
                 <Text 
                     style={styles.btnStyle}>
-                Wanna Chat?
+                CHAT NOW
                 </Text> 
             </TouchableOpacity>  
 
@@ -38,10 +38,14 @@ const styles = {
     },
     btnStyle: {
         color: "#f6c501", 
-        padding: 12,
+        fontSize: 20,
+      letterSpacing: 2,
+      paddingTop: 10,
+      paddingBottom: 10,
+      paddingLeft: 50,
+      paddingRight: 50,
         backgroundColor: '#fff',
-        borderRadius: 3,
-        borderWidth: 3,
+        borderWidth: 2,
         borderColor: '#f6c501'
     }
     
