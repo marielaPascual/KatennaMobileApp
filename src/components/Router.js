@@ -5,6 +5,7 @@ import { Router, Scene } from 'react-native-router-flux';
 import WelcomeScreen from './WelcomeScreen';
 import ChatBotScreen from './ChatBotScreen';
 import LoginForm from './LoginForm';
+import SuggestionsForm from './SuggestionsForm';
 
 const AppLogo = () => {
     return (
@@ -44,6 +45,13 @@ const Routers = () => (
                 renderTitle={() => { return <AppLogo />; }}                                
                 />
                
+               <Scene 
+                key="suggestions" 
+                component={SuggestionsForm}
+                title="Suggestions"
+                renderTitle={() => { return <AppLogo />; }}                                
+                />
+
             </Scene>
         
           
@@ -53,7 +61,14 @@ const Routers = () => (
 const styles = {
     navBar: {
         backgroundColor: '#f6c501',
-        height: 60
+        height: 60, 
+        shadowOpacity: 0, 
+        shadowOffset: { 
+            height: 0, 
+            width:0, 
+        }, 
+        shadowRadius: 0, 
+        borderBottomWidth:0
     },
     navBarTitle: {
         color: '#fff',
