@@ -4,8 +4,9 @@ import { View, Image } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
 import WelcomeScreen from './WelcomeScreen';
 import ChatBotScreen from './ChatBotScreen';
-import LoginForm from './LoginForm';
+//import LoginForm from './LoginForm';
 import SuggestionsForm from './SuggestionsForm';
+import LoginTemp from './LoginTemp';
 
 const AppLogo = () => {
     return (
@@ -26,7 +27,7 @@ const Routers = () => (
 
                 <Scene  
                 key="login" 
-                component={LoginForm}
+                component={LoginTemp}
                 title="Log Out"
                 hideNavBar={true}
 				// initial
