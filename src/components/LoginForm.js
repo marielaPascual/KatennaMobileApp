@@ -1,38 +1,68 @@
 import React , { Component} from 'react'; 
-import { View, Text, Image, Font } from 'react-native';
+import { View, Text, Image, Font, AsyncStorage } from 'react-native';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import { Button, Input, CardSection } from './common';
 import TextComponent from './FontsComponent';
 
+const ACCESS_TOKEN = 'access_token'; 
+
 class LoginForm extends Component {
 	state = {email: '' , password: '', error: '', loading: false };
 	
 	componentWillMount(){
-		firebase.initializeApp({
-			apiKey: 'AIzaSyCSer4T5S2w2mx5lcKy-q4-vv4G2lRROmk',
-			authDomain: 'authentication-5cc0a.firebaseapp.com',
-			databaseURL: 'https://authentication-5cc0a.firebaseio.com',
-			projectId: 'authentication-5cc0a',
-			storageBucket: 'authentication-5cc0a.appspot.com',
-			messagingSenderId: '916095330998'
-		  });
-		  
+
 		  this.image=require('../assets/img/katenna-logo.png')
 	}
-	onButtonPress() {
-		const { email, password } = this.state;
+	storeToken(responseData) {
+        AsyncStorage.setItem(ACCESS_TOKEN, responseData, (err) => {
+            if (err) {
+                console.log("an error");
+                throw err;
+            }
+            console.log("success");
+        }).catch((err) => {
+            console.log("error is: " + err);
+        });
+    }
 
-		// this.setState({ error: '', loading: true });
-
-		firebase.auth().signInWithEmailAndPassword(email,password)
-			.then( () =>
-			{ this.onLoginSuccess() }
-			)
-			.catch(() => {
-				this.onLoginFail();
-			});
-	}
+    async onLoginPressed() {
+        this.setState({ showProgress: true })
+        try {
+            let response = await fetch('https://katennamain.herokuapp.com/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    
+                        email: this.state.email,
+                        password: this.state.password,
+                    
+                })
+            });
+            let res = await response.text();
+            if (response.status >= 200 && response.status < 300) {
+                //Handle success
+                let accessToken = res;
+                console.log(accessToken);
+                //On success we will store the access_token in the AsyncStorage
+                this.storeToken(accessToken);
+                Actions.welcome();
+                
+            } else {
+                //Handle error
+                let error = res;
+                throw error;
+                this.onLoginFail();
+            }
+        } catch (error) {
+            this.onLoginFail();
+            console.log("error " + error);
+            this.setState({ showProgress: false });
+        }
+    }
 
 	onLoginFail() {
 		this.setState({
@@ -41,16 +71,12 @@ class LoginForm extends Component {
 		});
 	}
 
-	onLoginSuccess() {
-		Actions.welcome();
-	}
-
 	renderButton() {
 		if (this.state.loading) {
 			return <Spinner size='small' />
 		}
 		return (
-			<Button onPress={this.onButtonPress.bind(this)}>
+			<Button onPress={this.onLoginPressed.bind(this)}>
 			</Button>
 		);
 	}
