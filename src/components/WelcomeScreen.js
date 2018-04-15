@@ -3,11 +3,13 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Button from './common';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = (props) => {
+
     return (
         <View style={{flex:1}}>
             <View style={styles.viewStyle}>
-                <Text>Hi, {'Fulanita'}!</Text>
+                <Text>Welcome, {props.userFullName}!</Text>
+             {/* <Text>Let's talk about your {props.userJobPosition} duties.</Text> */}
                 <Image
                     style={styles.imgStyle}
                     source={require('../assets/img/kat.png')}
@@ -71,7 +73,7 @@ const styles = {
     },
     suggestionsTextStyle: {
         color: "#fff",
-        fontSize: 20,
+        fontSize: 16,
         letterSpacing: 2, 
         marginLeft: 15
     },

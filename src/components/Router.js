@@ -19,6 +19,7 @@ const AppLogo = () => {
 const Routers = () => (
     <Router navigationBarStyle={styles.navBar}
             titleStyle={styles.navBarTitle}
+
             navBarButtonColor='#fff' >
             
 

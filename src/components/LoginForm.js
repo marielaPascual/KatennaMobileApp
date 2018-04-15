@@ -8,7 +8,7 @@ import TextComponent from './FontsComponent';
 const ACCESS_TOKEN = 'access_token'; 
 
 class LoginForm extends Component {
-	state = {email: '' , password: '', error: '', loading: false };
+	state = {email: '' , password: '', name: '', error: '', loading: false };
 	
 	componentWillMount(){
 
@@ -39,17 +39,25 @@ class LoginForm extends Component {
                     
                         email: this.state.email,
                         password: this.state.password,
-                    
+                        name: this.state.name,                  
                 })
             });
             let res = await response.text();
             if (response.status >= 200 && response.status < 300) {
                 //Handle success
                 let accessToken = res;
-                console.log(accessToken);
+                console.log("This is a successfull response:" + accessToken);
                 //On success we will store the access_token in the AsyncStorage
                 this.storeToken(accessToken);
-                Actions.welcome();
+                let accessTokenObject = JSON.parse(accessToken);
+                console.log(JSON.parse(accessToken))
+                let userFullName= accessTokenObject.user.name;
+                let userPosition = accessTokenObject.user.position;
+                Actions.welcome({ 
+                    userFullName: userFullName,
+                    userJobPosition: userPosition
+                });
+
                 
             } else {
                 //Handle error
