@@ -8,7 +8,7 @@ import TextComponent from './FontsComponent';
 const ACCESS_TOKEN = 'access_token'; 
 
 class LoginForm extends Component {
-	state = {email: '' , password: '', name: '', error: '', loading: false };
+	state = {email: '' , password: '', name: '', error: '', position: '', loading: false };
 	
 	componentWillMount(){
 
@@ -38,8 +38,7 @@ class LoginForm extends Component {
                 body: JSON.stringify({
                     
                         email: this.state.email,
-                        password: this.state.password,
-                        name: this.state.name,                  
+                        password: this.state.password                 
                 })
             });
             let res = await response.text();

@@ -4,12 +4,14 @@ import { Actions } from 'react-native-router-flux';
 import Button from './common';
 
 const WelcomeScreen = (props) => {
-
+    const B = (props) => <Text style={{color: "#000000"}}>{props.children}</Text>
     return (
         <View style={{flex:1}}>
             <View style={styles.viewStyle}>
-                <Text>Welcome, {props.userFullName}!</Text>
-             {/* <Text>Let's talk about your {props.userJobPosition} duties.</Text> */}
+                <View>
+                    <Text style ={styles.viewText}>Welcome,  <B>{props.userFullName}!</B>{"\n"}</Text>
+                    <Text style ={styles.viewText}>Let's talk about your {"\n"}<B>{props.userJobPosition}</B> duties.</Text>
+                </View>
                 <Image
                     style={styles.imgStyle}
                     source={require('../assets/img/kat.png')}
@@ -40,15 +42,19 @@ const WelcomeScreen = (props) => {
 const styles = {
     viewStyle: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         alignItems: 'center',
         backgroundColor: '#fff'
-
+    },
+    viewText: {
+        textAlign: 'center',
+        paddingLeft: 30,   
+        paddingRight: 30,
+        color: "#b6b8bb"
     },
     imgStyle: {
         height: 200,
-        width: 200,
-        margin: 30
+        width: 200
 
     },
     btnStyle: {
@@ -62,7 +68,7 @@ const styles = {
         backgroundColor: '#fff',
         borderWidth: 2,
         borderColor: '#f6c501',
-        marginTop: 20
+        marginBottom: 15
     },
     suggestionsViewStyle:{
         height: 70, 
