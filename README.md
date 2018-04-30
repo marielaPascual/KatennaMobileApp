@@ -10,7 +10,10 @@ The Katenna Application, is the solution to this problem
 
 Katenna is a combination of an Administrator Desktop Application and an End-User Mobile Application. The live app shows an example of the Tides South Beach Hotel using our application [showcased in this GitHub Repo](https://github.com/boyrajat/katenna). The Administrator goes to our katenna.com landing page, where they can log in. After successfully logging in, an administrator can manage all tasks and duties within the hotel, as they relate to each employee and each department. Features include storing information in the database, adding, deleting, editing and assigning individual tasks. Additionally, the mobile application can be accesses by the hotel's employees, with their own authentication login, in the mobile application. Once inside the application, they can quickly retrieve information about their specific tasks an duties, using the integrated chat bot. They can also send suggestions upwards to their supervisors and managers about improvements or changes to specific tasks, which can be approved and added to the database.
 
-## Mobile app Screen Shots (this app):
+## Mobile Application:
+
+![katenna all](https://user-images.githubusercontent.com/31390306/39430249-54a138cc-4c5b-11e8-9993-c4cbc2da1945.png)
 
 
+## Desktop Application www.katenna.com [this repo](https://github.com/boyrajat/katenna):
 
